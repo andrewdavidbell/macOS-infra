@@ -1,0 +1,6 @@
+---
+# <ansible_base_dir>/roles/homebrew/defaults/main.yml
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask

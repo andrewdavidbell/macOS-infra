@@ -1,12 +1,6 @@
 ---
-# Top level playbook to automate configuration of macOS-based machine
+- hosts: all
 
-- import_playbook: base.yml
-
-- import_playbook: home.yml
-  when: '"Macmini" in ansible_model'
-
-- import_playbook: work.yml
-  when: '"MacBookPro" in ansible_model'
-
-- import_playbook: development.yml
+  roles:
+    - role: homebrew
+      tags: homebrew

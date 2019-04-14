@@ -1,0 +1,9 @@
+---
+# <ansible_base_dir>/roles/homebrew/tasks/main.yml
+
+- name: Ensure configured taps (formula repositories) are installed
+  homebrew_tap:
+    tap: "{{ item.name | default(item) }}"
+    url: "{{ item.url | default(omit) }}"
+    state: present
+  loop: "{{ homebrew_taps }}"
