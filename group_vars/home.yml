@@ -31,7 +31,7 @@ homebrew_casks:
 
 homebrew_formulae:
   - azure-cli
-  - serverless # ignore-dependencies
+  - { name: serverless, install_options: ignore-dependencies }
   - tmux
   - ruby-install
   - chruby # post: bashrc section
@@ -40,6 +40,9 @@ homebrew_formulae:
   - packer
   - terraform
   - vault
+  - nvm
+  - git
+  - python
 
 apple_disk_images:
   - synology-notebook
