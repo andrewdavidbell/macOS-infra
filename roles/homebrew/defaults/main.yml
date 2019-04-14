@@ -4,3 +4,7 @@
 homebrew_taps:
   - homebrew/core
   - homebrew/cask
+
+homebrew_casks: []
+homebrew_cask_appdir: /Applications
+homebrew_cask_accept_external_apps: false

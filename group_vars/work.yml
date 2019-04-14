@@ -1,18 +1,6 @@
 ---
 # <ansible_base_dir>/group_vars/work.yml
 
-homebrew_formulae:
-  - azure-cli
-  - serverless # ignore-dependencies
-  - tmux
-  - ruby-install
-  - chruby # post: bashrc section
-  - nvm # post: bashrc section
-  - jq
-  - packer
-  - terraform
-  - vault
-
 homebrew_taps:
   - homebrew/cask-drivers
 
@@ -38,25 +26,17 @@ homebrew_casks:
   - virtualbox-extension-pack
   - iterm2 # post: shell integration
 
-# Additonal shell configuration
-# DMG packages
-# ssh
-# aws
-# visual studio code?
-# system preferences
+homebrew_formulae:
+  - azure-cli
+  - serverless # ignore-dependencies
+  - tmux
+  - ruby-install
+  - chruby # post: bashrc section
+  - nvm # post: bashrc section
+  - jq
+  - packer
+  - terraform
+  - vault
 
-# packages for other package management systems:
-# ruby, node, python
-
-# Custom packages
-#   synology notebook
-# ssh
-# aws
-# ruby
-# ruby packages
-# nodejs
-# nodejs packages
-# python
-# python packages
-# shell
-# system preferences
+apple_disk_images:
+  - synology-notebook
