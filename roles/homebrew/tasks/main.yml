@@ -20,6 +20,15 @@
   loop: "{{ homebrew_casks }}"
   tags: homebrew_cask
 
+- name: Additional provisioning for casks
+  include_role:
+    name: "{{ item.role }}"
+    apply:
+      tags: homebrew_cask_additional
+  when: item.role is defined
+  loop: "{{ homebrew_casks }}"
+  tags: homebrew_cask_additional
+
 - name: Ensure configured homebrew formulae are installed
   homebrew:
     name: "{{ item.name | default(item) }}"
@@ -27,3 +36,12 @@
     state: present
   loop: "{{ homebrew_formulae }}"
   tags: homebrew_formulae
+
+- name: Additional provisioning for formulae
+  include_role:
+    name: "{{ item.role }}"
+    apply:
+      tags: homebrew_formulae_additional
+  when: item.role is defined
+  loop: "{{ homebrew_formulae }}"
+  tags: homebrew_formulae_additional
