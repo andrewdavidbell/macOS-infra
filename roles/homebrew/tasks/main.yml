@@ -9,25 +9,17 @@
     url: "{{ item.url | default(omit) }}"
     state: present
   loop: "{{ homebrew_taps }}"
-  tags: homebrew_tap
+  tags: homebrew_taps
 
 - name: Ensure configured casks are installed
-  homebrew_cask:
-    name: "{{ item.name | default(item) }}"
-    install_options: "{{ item.install_options | default('appdir=' + homebrew_cask_appdir) }}"
-    accept_external_apps: "{{ homebrew_cask_accept_external_apps }}"
-    state: present
-  loop: "{{ homebrew_casks }}"
-  tags: homebrew_cask
-
-- name: Additional provisioning for casks
-  include_role:
-    name: "{{ item.role }}"
+  include_tasks:
+    file: casks.yml
     apply:
-      tags: homebrew_cask_additional
-  when: item.role is defined
+      tags: homebrew_casks
   loop: "{{ homebrew_casks }}"
-  tags: homebrew_cask_additional
+  loop_control:
+    loop_var: cask
+  tags: homebrew_casks
 
 - name: Ensure configured homebrew formulae are installed
   homebrew:
