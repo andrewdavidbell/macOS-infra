@@ -18,7 +18,7 @@
       tags: homebrew_casks
   loop: "{{ homebrew_casks }}"
   loop_control:
-    loop_var: cask
+    loop_var: cask_item
   tags: homebrew_casks
 
 - name: Ensure configured homebrew formulae are installed
