@@ -24,8 +24,8 @@ homebrew_casks:
   - qlmarkdown
   - docker
   - vagrant # post: NFS shared folders
-  - virtualbox
-  - virtualbox-extension-pack
+  # - virtualbox
+  # - virtualbox-extension-pack
   - iterm2 # post: shell integration
   - visual-studio-code # post: configuration & extension installation
 
