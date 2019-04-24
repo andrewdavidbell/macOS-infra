@@ -37,9 +37,9 @@ homebrew_formulae:
   - packer
   - terraform
   - vault
-  - git
-  - python@2
-  - python
+  # - git
+  # - python@2
+  # - python
 
 apple_disk_images:
   - synology-notebook
