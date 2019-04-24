@@ -7,7 +7,7 @@ homebrew_taps:
 homebrew_casks:
   # - 1password # post: install license key
   - synology-drive # post: run installer
-  - microsoft-office
+  # - microsoft-office
   - slack
   - google-drive-file-stream
   - aerial
