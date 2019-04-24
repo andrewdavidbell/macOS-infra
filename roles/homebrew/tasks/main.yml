@@ -21,19 +21,12 @@
     loop_var: cask_item
   tags: homebrew_casks
 
-- name: Ensure configured homebrew formulae are installed
-  homebrew:
-    name: "{{ item.name | default(item) }}"
-    install_options: "{{ item.install_options | default(omit) }}"
-    state: present
-  loop: "{{ homebrew_formulae }}"
-  tags: homebrew_formulae
-
-- name: Additional provisioning for formulae
-  include_role:
-    name: "{{ item.role }}"
+- name: Ensure configured formulae are installed
+  include_tasks:
+    file: formulae.yml
     apply:
-      tags: homebrew_formulae_additional
-  when: item.role is defined
+      tags: homebrew_formulae
   loop: "{{ homebrew_formulae }}"
-  tags: homebrew_formulae_additional
+  loop_control:
+    loop_var: formula_item
+  tags: homebrew_formulae
