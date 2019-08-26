@@ -15,7 +15,7 @@
     name: "{{ formula_role_name }}"
   when: r.stat.exists
 
-- name: Install the formula for this cask item
+- name: Install the formula for this formula item
   homebrew:
     name: "{{ formula_item.name | default(formula_item) }}"
     install_options: "{{ formula_item.install_options | default(omit) }}"

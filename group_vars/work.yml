@@ -4,6 +4,7 @@
 homebrew_taps:
   - homebrew/cask-drivers
   - versent/taps
+  - wagoodman/dive
 
 homebrew_casks:
   # - 1password # post: install license key
