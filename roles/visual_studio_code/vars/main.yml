@@ -3,10 +3,12 @@
 
 visual_studio_code:
   extensions:
-    - { name: 'ms-python.python', version: '0.9.1' }
-    - { name: 'mauve.terraform', version: '0.0.20' }
-    - { name: 'jpogran.puppet-vscode', version: '0.9.0' }
-    - { name: 'eamodio.gitlens', version: '8.0.2' }
-    - { name: 'aws-scripting-guy.cform', version: '0.0.10' }
-    - { name: 'vscoss.vscode-ansible', version: '0.3.0' }
-    - { name: 'aws-toolkit-vscode', version: '0.0.1' }
+    - { name: 'AmazonWebServices.aws-toolkit-vscode',      version: '1.0.0' }
+    - { name: 'aws-scripting-guy.cform',                   version: '0.0.23' }
+    - { name: 'ms-azuretools.vscode-docker',               version: '0.7.0' }
+    - { name: 'dbaeumer.vscode-eslint',                    version: '1.9.1' }
+    - { name: 'eamodio.gitlens',                           version: '9.9.3' }
+    - { name: 'ms-python.python',                          version: '2019.8.30787' }
+    - { name: 'mauve.terraform',                           version: '1.4.0' }
+    - { name: 'ms-vscode.vscode-typescript-tslint-plugin', version: '1.2.2' }
+    - { name: 'redhat.vscode-yaml',                        version: '0.5.1' }
