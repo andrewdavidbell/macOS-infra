@@ -31,6 +31,7 @@ homebrew_casks:
   - visual-studio-code
 
 homebrew_formulae:
+  - awscli
   - dive
 #  - git
   - jq

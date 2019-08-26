@@ -1,0 +1,6 @@
+---
+# <ansible_base_dir>/group_vars/all.yml
+
+staging_dir:
+  awscli: "~/.staging/awscli"
+

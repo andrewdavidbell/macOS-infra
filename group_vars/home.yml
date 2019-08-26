@@ -30,6 +30,7 @@ homebrew_casks:
   - visual-studio-code # post: configuration & extension installation
 
 homebrew_formulae:
+  - awscli
   - azure-cli
   - { name: serverless, install_options: ignore-dependencies }
   - tmux

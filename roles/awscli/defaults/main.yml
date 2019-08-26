@@ -1,0 +1,5 @@
+---
+# <ansible_base_dir>/roles/awscli/defaults/main.yml
+
+staging_dir:
+  awscli: "{{ role_path }}/files"
