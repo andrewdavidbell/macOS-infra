@@ -3,43 +3,46 @@
 
 homebrew_taps:
   - homebrew/cask-drivers
+  - versent/taps
 
 homebrew_casks:
   # - 1password # post: install license key
-  - synology-drive # post: run installer
-  # - microsoft-office
-  - slack
-  - google-drive-file-stream
   - aerial
-  - firefox
+  - docker
+  - dropbox
   - flux
+  - github
   - google-chrome
+  - google-cloud-sdk # post: bashrc section
+  - google-drive-file-stream
+  - iterm2 # post: shell integration
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
-  - github
+  # - microsoft-office
   - postman
-  - google-cloud-sdk # post: bashrc section
   - qlmarkdown
-  - docker
+  - slack
+  - synology-drive # post: run installer
+  - the-hit-list
   - vagrant # post: NFS shared folders
   # - virtualbox
   # - virtualbox-extension-pack
-  - iterm2 # post: shell integration
+  - visual-studio-code
 
 homebrew_formulae:
-  - azure-cli
-  - { name: serverless, install_options: ignore-dependencies }
-  - tmux
-  - ruby-install
-  - chruby # post: bashrc section
-  - nvm # post: bashrc section
+  - dive
+#  - git
   - jq
   - packer
+  - saml2aws
+  - serverless
   - terraform
   - vault
-  # - git
-  # - python@2
-  # - python
+  - zsh-syntax-highlighting
+#  - ruby-install
+#  - chruby # post: bashrc section
+#  - nvm # post: bashrc section
+#  - python
 
 apple_disk_images:
   - synology-notebook
