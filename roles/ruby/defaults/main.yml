@@ -1,5 +1,4 @@
 ---
-# file: roles/ruby/defaults/main.yml
+# <ansible_base_dir>/roles/ruby/defaults/main.yml
 
-ruby:
-  version: 2.3.7
+ruby_state: latest

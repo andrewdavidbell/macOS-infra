@@ -1,17 +1,10 @@
 ---
-# file: roles/ruby/tasks/main.yml
+# <ansible_base_dir>/roles/ruby/tasks/main.yml
 
 - name: Install Ruby
-  command: ruby-install ruby {{ ruby.version }}
-
-- name: Install Bundler in that stable version of Ruby
-  shell: |
-    [ -s /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
-    chruby_use {{ ansible_user_dir }}/.rubies/ruby-{{ ruby.version }}
-    gem install bundler
-    chruby_reset
-  args:
-    executable: /bin/bash
+  homebrew:
+    name: ruby
+    state: "{{ ruby_state }}"
 
 - name: Useful aliases for Bundler
   blockinfile:
@@ -23,5 +16,6 @@
       alias bu="b update"
       alias be="b exec"
       alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
+      export PATH="/usr/local/opt/ruby/bin:$PATH"
     marker: '# {mark} ANSIBLE MANAGED BLOCK - bundler'
     create: yes

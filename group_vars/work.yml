@@ -33,18 +33,22 @@ homebrew_casks:
 homebrew_formulae:
   - awscli
   - dive
-#  - git
+  # - git # requires Ansible Vault
   - jq
+  - node
   - packer
+  - python
   - saml2aws
   - serverless
   - terraform
   - vault
   - zsh-syntax-highlighting
-#  - ruby-install
-#  - chruby # post: bashrc section
-#  - nvm # post: bashrc section
-#  - python
 
 apple_disk_images:
   - synology-notebook
+
+python_packages:
+  - autopep8
+  - pylint
+  - mock
+  - rope
