@@ -1,10 +1,10 @@
 ---
-# file: roles/thehitlist/tasks/main.yml
+# <ansible_base_dir>/roles/the_hit_list/tasks/main.yml
 
 - name: Install The Hit List
   homebrew_cask:
     name: the-hit-list
-    state: present
+    state: "{{ the_hit_list_state }}"
 
 - name: Set licensee name
   osx_defaults:

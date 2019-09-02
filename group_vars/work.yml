@@ -24,7 +24,7 @@ homebrew_casks:
   - qlmarkdown
   - slack
   - synology-drive # post: run installer
-  - the-hit-list
+  # - the-hit-list # requires Ansible Vault
   - vagrant
   # - virtualbox
   # - virtualbox-extension-pack
