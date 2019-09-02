@@ -1,10 +1,10 @@
 ---
-# file: roles/google_cloud_sdk/tasks/main.yml
+# <ansible_base_dir>/roles/google_cloud_sdk/tasks/main.yml
 
 - name: Install Google Cloud SDK
   homebrew_cask:
     name: google-cloud-sdk
-    state: present
+    state: "{{ google_cloud_sdk_state }}"
 
 - name: Ensure Google Cloud SDK is sourced from {{ ansible_user_dir }}/.bashrc
   blockinfile:

@@ -1,7 +1,9 @@
 ---
 # <ansible_base_dir>/roles/homebrew/tasks/main.yml
 
-# Force homebrew update
+- name: Update homebrew
+  command: /usr/local/bin/brew update
+  changed_when: false
 
 - name: Ensure configured taps (formula repositories) are installed
   homebrew_tap:
@@ -30,3 +32,7 @@
   loop_control:
     loop_var: formula_item
   tags: homebrew_formulae
+
+- name: Cleanup homebrew
+  command: /usr/local/bin/brew cleanup
+  changed_when: false

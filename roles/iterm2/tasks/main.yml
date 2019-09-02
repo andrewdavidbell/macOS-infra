@@ -1,10 +1,10 @@
 ---
-# file: roles/iterm2/tasks/main.yml
+# <ansible_base_dir>/roles/iterm2/tasks/main.yml
 
 - name: Install iTerm2
   homebrew_cask:
     name: iterm2
-    state: present
+    state: "{{ iterm2_state }}"
 
 #
 #  get_url is failing to validate certs and even with validation switched off.
