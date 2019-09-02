@@ -25,7 +25,7 @@ homebrew_casks:
   - slack
   - synology-drive # post: run installer
   - the-hit-list
-  - vagrant # post: NFS shared folders
+  - vagrant
   # - virtualbox
   # - virtualbox-extension-pack
   - visual-studio-code
