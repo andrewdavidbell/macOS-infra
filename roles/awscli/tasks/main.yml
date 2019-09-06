@@ -16,7 +16,7 @@
 
 - name: Install AWS config file from fragments
   assemble:
-    src: "{{ staging_dir.awscli }}/config.d"
+    src: "{{ awscli_staging_dir }}/config.d"
     dest: "{{ ansible_user_dir }}/.aws/config"
     ignore_hidden: yes
     owner: "{{ ansible_user_id }}"
@@ -25,7 +25,7 @@
 
 - name: Install AWS credentials file from fragments
   assemble:
-    src: "{{ staging_dir.awscli }}/credentials.d"
+    src: "{{ awscli_staging_dir }}/credentials.d"
     dest: "{{ ansible_user_dir }}/.aws/credentials"
     ignore_hidden: yes
     owner: "{{ ansible_user_id }}"

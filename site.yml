@@ -4,3 +4,6 @@
   roles:
     - role: homebrew
       tags: homebrew
+
+    - role: ssh
+      tags: ssh
