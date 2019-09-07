@@ -35,7 +35,7 @@ homebrew_formulae:
   - dive
   # - git # requires Ansible Vault
   - jq
-  - node
+  - nodejs
   - packer
   - python
   - saml2aws
@@ -52,3 +52,6 @@ python_packages:
   - pylint
   - mock
   - rope
+
+nodejs_packages:
+  - aws-cdk
