@@ -1,5 +1,5 @@
 ---
-# file: roles/bash/tasks/main.yml
+# <ansible_base_dir>/roles/bash/tasks/main.yml
 
 - name: Install ~/.bash_profile
   copy:
@@ -16,9 +16,9 @@
       # Personal resource file for Bash(1) interactive non-login shells
 
       # Useful aliases
-      alias ls="ls -G"
-      alias ll="ls -lG"
-      alias la="ls -laG"
+      alias ls="ls -FG"
+      alias ll="ls -FlG"
+      alias la="ls -FlaG"
       alias cd..="cd .."
       alias dev="cd ~/Development"
     marker: '# {mark} ANSIBLE MANAGED BLOCK - base'
