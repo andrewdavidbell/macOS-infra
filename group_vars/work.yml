@@ -14,26 +14,25 @@ homebrew_casks:
   - flux
   - github
   - google-chrome
-  - google-cloud-sdk # post: bashrc section
+  - google-cloud-sdk
   - google-drive-file-stream
-  - iterm2 # post: shell integration
+  - iterm2
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
-  # - microsoft-office
   - postman
   - qlmarkdown
   - slack
-  - synology-drive # post: run installer
+  - synology-drive
   # - the-hit-list # requires Ansible Vault
   - vagrant
-  # - virtualbox
-  # - virtualbox-extension-pack
+  - virtualbox
+  - virtualbox-extension-pack
   - visual-studio-code
 
 homebrew_formulae:
   - awscli
   - dive
-  # - git # requires Ansible Vault
+  - git
   - jq
   - nodejs
   - packer

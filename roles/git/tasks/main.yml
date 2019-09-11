@@ -1,5 +1,5 @@
 ---
-# file: roles/github/tasks/main.yml
+# <ansible_base_dir>/roles/git/tasks/main.yml
 
 - name: Install git
   homebrew:
@@ -19,11 +19,11 @@
     scope: global
     value: Andrew Bell
 
-- name: Set email in global git configuration
+- name: Set github email in global git configuration
   git_config:
     name: user.email
     scope: global
-    value: "{{ github.noreply_user_email }}"
+    value: "{{ github_email }}"
 
 - name: Set page in global git configuration
   git_config:
@@ -46,22 +46,3 @@
     owner: "{{ ansible_user_id }}"
     group: staff
     mode: 0644
-
-- name: Check for github entry in keychain
-  command: >
-    /usr/bin/security find-internet-password
-    -a {{ github.keychain.account }}
-    -s {{ github.keychain.server }}
-  register: result
-  ignore_errors: true
-  changed_when: false
-
-- name: Add github entry to keychain
-  command: >
-    /usr/bin/security add-internet-password
-    -a {{ github.keychain.account }}
-    -s {{ github.keychain.server }}
-    -w {{ github.keychain.password }}
-    -r {{ github.keychain.protocol }}
-  when: result is failed
-  no_log: true
