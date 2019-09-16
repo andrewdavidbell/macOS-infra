@@ -15,7 +15,9 @@
       alias bil="bi --local"
       alias bu="b update"
       alias be="b exec"
-      alias binit="bi && b package && echo 'vendor/ruby' >> .gitignore"
-      export PATH="/usr/local/opt/ruby/bin:$PATH"
+      alias binit="bi && b package && echo 'vendor' >> .gitignore"
+
+      export PATH="${HOMEBREW_PREFIX}/opt/ruby/bin:$PATH"
+      export PATH="${HOMEBREW_PREFIX}/lib/ruby/gems/2.6.0/bin/:$PATH"
     marker: '# {mark} ANSIBLE MANAGED BLOCK - bundler'
     create: yes

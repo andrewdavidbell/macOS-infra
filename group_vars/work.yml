@@ -10,7 +10,6 @@ homebrew_casks:
   # - 1password # post: install license key
   - aerial
   - docker
-  - dropbox
   - flux
   - github
   - google-chrome
@@ -40,6 +39,7 @@ homebrew_formulae:
   - nodejs
   - packer
   - python
+  - ruby
   - saml2aws
   - serverless
   - terraform
