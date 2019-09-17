@@ -32,6 +32,7 @@ homebrew_casks:
 homebrew_formulae:
   - awscli
   - dive
+  - docker-machine-driver-hyperkit
   - git
   - gitlab-runner
   - jq
@@ -39,7 +40,7 @@ homebrew_formulae:
   - nodejs
   - packer
   - python
-  - ruby
+  - ruby@2.5
   - saml2aws
   - serverless
   - terraform

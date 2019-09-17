@@ -3,51 +3,63 @@
 
 homebrew_taps:
   - homebrew/cask-drivers
+  - wagoodman/dive
 
 homebrew_casks:
   # - 1password # post: install license key
-  - synology-drive # post: run installer
-  # - the-hit-list # post: install license key
+  - arduino
+  - docker
   - dropbox
   - evernote
-  - arduino
-  - handbrake
-  - nordvpn
-  - send-to-kindle
   - flux
+  - github
   - google-chrome
+  - google-cloud-sdk
+  - handbrake
+  - iterm2
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
-  - github
+  - minikube
+  - nordvpn
   - postman
-  - google-cloud-sdk # post: bashrc section
   - qlmarkdown
-  - docker
-  - vagrant # post: NFS shared folders
-  # - virtualbox
-  # - virtualbox-extension-pack
-  - iterm2 # post: shell integration
-  - visual-studio-code # post: configuration & extension installation
+  - send-to-kindle
+  - synology-drive
+  # - the-hit-list # requires Ansible Vault
+  - vagrant
+  - virtualbox
+  - virtualbox-extension-pack
+  - visual-studio-code
 
 homebrew_formulae:
   - awscli
-  - azure-cli
-  - { name: serverless, install_options: ignore-dependencies }
-  - tmux
-  - ruby-install
-  - chruby # post: bashrc section
-  - nvm # post: bashrc section
+  - dive
+  - docker-machine-driver-hyperkit
+  - git
   - jq
+  - kubectl
+  - nodejs
   - packer
+  - python
+  - ruby@2.5
+  - serverless
   - terraform
   - vault
-  # - git
-  # - python
+  - zsh-syntax-highlighting
 
 apple_disk_images:
-  - synology-notebook
-  - neooffice
   - epson_wf_3620
+#   helix
+  - neooffice
+  - synology-notebook
   - tapedeck
 #   xld
-#   helix
+
+python_packages:
+  - autopep8
+  - pylint
+  - mock
+  - rope
+
+nodejs_packages:
+  - aws-cdk
