@@ -58,3 +58,8 @@ python_packages:
 
 nodejs_packages:
   - aws-cdk
+
+ruby_packages:
+  - bundler
+  - cfndsl
+  - cfn2dsl
