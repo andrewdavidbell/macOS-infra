@@ -37,12 +37,13 @@ homebrew_formulae:
   - gitlab-runner
   - jq
   - kubectl
-  - nodejs
+#  - nodejs
+  - nvm
   - packer
   - python
   - ruby@2.5
   - saml2aws
-  - serverless
+#  - serverless
   - terraform
   - vault
   - zsh-syntax-highlighting
@@ -55,9 +56,10 @@ python_packages:
   - pylint
   - mock
   - rope
+  - cfn_flip
 
 nodejs_packages:
-  - aws-cdk
+#  - aws-cdk
 
 ruby_packages:
   - bundler
