@@ -5,6 +5,25 @@
     "git.confirmSync": false,
     "window.zoomLevel": 0,
     "python.linting.pylintUseMinimalCheckers": false,
-    "python.venvPath": "{{ ansible_user_dir }}/.virtualenvs/",
-    "gitlens.codeLens.enabled": false
+    "gitlens.codeLens.enabled": false,
+    "yaml.customTags": [
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Join sequence"
+    ],
+    "yaml.format.enable": true
 }
