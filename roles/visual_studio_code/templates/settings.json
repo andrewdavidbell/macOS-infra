@@ -26,5 +26,7 @@
         "!Join sequence"
     ],
     "yaml.format.enable": true,
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
+    "terminal.integrated.fondSize": 14
 }

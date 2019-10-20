@@ -1,0 +1,33 @@
+---
+# <ansible_base_dir>/roles/zsh/tasks/main.ym
+
+# Install Oh My Zsh and manage it's plugins with antigen
+# https://github.com/zsh-users/antigen
+
+- name: Install antigen
+  homebrew:
+    name: antigen
+    state: present
+
+- name: Install ~/.zshrc
+  copy:
+    src: zshrc
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    owner: "{{ ansible_user_id }}"
+    group: staff
+    mode: 0644
+
+- name: Fetch iTerm2 zsh integration script
+  get_url:
+    url: https://iterm2.com/shell_integration/zsh
+    dest: "{{ ansible_user_dir }}/.iterm2_shell_integration.zsh"
+    owner: "{{ ansible_user_id }}"
+    group: staff
+    mode: 0755
+    validate_certs: no
+
+- name: Load iTerm2 zsh integration script at login
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^\[ -e ~/.iterm2_shell_integration.zsh \]'
+    line: '[ -e ~/.iterm2_shell_integration.zsh ] && . ~/.iterm2_shell_integration.zsh'

@@ -45,7 +45,6 @@ homebrew_formulae:
   - serverless
   - terraform
   - vault
-  - zsh-syntax-highlighting
 
 apple_disk_images:
   - epson_wf_3620

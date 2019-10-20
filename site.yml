@@ -21,6 +21,9 @@
         mode: 0755
 
   roles:
+    - role: zsh
+      tags: zsh
+
     - role: bash
       tags: bash
 
