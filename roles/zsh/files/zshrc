@@ -26,6 +26,7 @@ antigen theme agnoster
 # Tell Antigen that you're done.
 antigen apply
 
-################################################################################
 # Modify prompt
 DEFAULT_USER=$(whoami)
+
+alias dev='cd ~/Development'

@@ -1,7 +1,7 @@
 ---
 # <ansible_base_dir>/roles/bash/tasks/main.yml
 
-- name: Install ~/.bash_profile
+- name: Install {{ ansible_user_dir }}/.bash_profile
   copy:
     src: bash_profile
     dest: "{{ ansible_user_dir }}/.bash_profile"
