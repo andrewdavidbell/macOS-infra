@@ -37,13 +37,11 @@ homebrew_formulae:
   - gitlab-runner
   - jq
   - kubectl
-#  - nodejs
   - nvm
   - packer
   - python
   - ruby@2.5
   - saml2aws
-#  - serverless
   - terraform
   - vault
 

@@ -38,11 +38,10 @@ homebrew_formulae:
   - git
   - jq
   - kubectl
-  - nodejs
+  - nvm
   - packer
   - python
   - ruby@2.5
-  - serverless
   - terraform
   - vault
 

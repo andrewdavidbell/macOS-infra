@@ -1,0 +1,39 @@
+---
+# <ansible_base_dir>/roles/nvm/tasks/main.yml
+
+- name: Install nodejs version manager
+  homebrew:
+    name: nvm
+    state: present
+
+- name: Make {{ ansible_user_dir }}/.nvm
+  file:
+    path: "{{ ansible_user_dir }}/.nvm"
+    state: directory
+    owner: "{{ ansible_user_id }}"
+    group: staff
+    mode: 0755
+
+- name: Ensure nvm.sh is sourced from {{ ansible_user_dir }}/.bashrc
+  blockinfile:
+    dest: "{{ ansible_user_dir }}/.bashrc"
+    block: |
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+      [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: nvm'
+    backup: yes
+
+- name: Ensure nvm.sh is sourced from {{ ansible_user_dir }}/.zshrc
+  blockinfile:
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    block: |
+
+      export NVM_DIR="$HOME/.nvm"
+      [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+      [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: nvm'
+    backup: yes
