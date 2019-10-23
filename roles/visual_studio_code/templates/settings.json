@@ -28,5 +28,19 @@
     "yaml.format.enable": true,
     "editor.tabSize": 2,
     "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
-    "terminal.integrated.fondSize": 14
+    "terminal.integrated.fondSize": 14,
+    "terminal.integrated.rendererType": "dom",
+    "terraform.indexing": {
+        "enabled": false,
+        "liveIndexing": false,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    }
 }
