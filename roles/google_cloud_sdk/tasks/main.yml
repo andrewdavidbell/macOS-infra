@@ -12,5 +12,12 @@
     block: |
       [ -e ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc ] && . ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.bash.inc
       [ -e ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc ] && . ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.bash.inc
-    marker: '# {mark} ANSIBLE MANAGED BLOCK - google-cloud-sdk'
-    create: yes
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: google-cloud-sdk'
+
+- name: Ensure Google Cloud SDK is sourced from {{ ansible_user_dir }}/.zshrc
+  blockinfile:
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    block: |
+      [ -e ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ] && . ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+      [ -e ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ] && . ${HOMEBREW_PREFIX}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: google-cloud-sdk'

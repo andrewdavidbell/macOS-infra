@@ -1,4 +1,6 @@
-source $(brew --prefix)/share/antigen/antigen.zsh
+HOMEBREW_PREFIX=$(brew --prefix)
+
+source ${HOMEBREW_PREFIX}/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -9,6 +11,7 @@ antigen bundles <<EOBUNDLES
     git
     nvm
     npm
+    python
 
     # Syntax highlighting bundle.
     zsh-users/zsh-syntax-highlighting

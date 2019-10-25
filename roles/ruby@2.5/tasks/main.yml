@@ -6,7 +6,7 @@
     name: ruby@2.5
     state: "{{ ruby_state }}"
 
-- name: Ruby path & useful aliases for Bundler
+- name: Ruby path & useful aliases for Bundler (bash)
   blockinfile:
     dest: "{{ ansible_user_dir }}/.bashrc"
     block: |
@@ -19,8 +19,22 @@
 
       export PATH="${HOMEBREW_PREFIX}/opt/ruby@2.5/bin:$PATH"
       export PATH="${HOMEBREW_PREFIX}/lib/ruby/gems/2.5.0/bin:$PATH"
-    marker: '# {mark} ANSIBLE MANAGED BLOCK - ruby & bundler'
-    create: yes
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: ruby'
+
+- name: Ruby path & useful aliases for Bundler (zsh)
+  blockinfile:
+    dest: "{{ ansible_user_dir }}/.zshrc"
+    block: |
+      alias b="bundle"
+      alias bi="b install --path vendor"
+      alias bil="bi --local"
+      alias bu="b update"
+      alias be="b exec"
+      alias binit="bi && b package && echo 'vendor' >> .gitignore"
+
+      export PATH="${HOMEBREW_PREFIX}/opt/ruby@2.5/bin:$PATH"
+      export PATH="${HOMEBREW_PREFIX}/lib/ruby/gems/2.5.0/bin:$PATH"
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: ruby'
 
 - name: Install packages
   gem:

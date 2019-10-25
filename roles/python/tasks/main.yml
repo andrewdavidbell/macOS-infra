@@ -13,12 +13,14 @@
   loop: "{{ python_packages }}"
   tags: python_packages
 
-- name: Add alias for virtualenv using Python 3
+- name: Add alias for virtualenv using Python 3 (bash)
   lineinfile:
     path: "{{ ansible_user_dir }}/.bashrc"
     regexp: '^alias venv='
     line: 'alias venv="/usr/local/bin/python3 -m venv --system-site-packages .venv"'
-    owner: "{{ ansible_user_id }}"
-    group: staff
-    mode: 0644
-    create: yes
+
+- name: Add alias for virtualenv using Python 3 (zsh)
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^alias venv='
+    line: 'alias venv="/usr/local/bin/python3 -m venv --system-site-packages .venv"'

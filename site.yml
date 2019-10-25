@@ -20,6 +20,14 @@
         group: staff
         mode: 0755
 
+    - name: Create development directory
+      file:
+        path: "{{ ansible_user_dir }}/Development"
+        state: directory
+        owner: "{{ ansible_user_id }}"
+        group: staff
+        mode: 0755
+
   roles:
     - role: zsh
       tags: zsh

@@ -44,16 +44,8 @@
       # kubectl alias & completion
       alias k="kubectl"
       complete -F __start_kubectl k
-    marker: '# {mark} ANSIBLE MANAGED BLOCK - base'
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: base'
     owner: "{{ ansible_user_id }}"
     group: staff
     mode: 0644
     create: yes
-
-- name: Create development directory
-  file:
-    path: "{{ ansible_user_dir }}/Development"
-    state: directory
-    owner: "{{ ansible_user_id }}"
-    group: staff
-    mode: 0755
