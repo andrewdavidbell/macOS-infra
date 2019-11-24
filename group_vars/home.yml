@@ -1,6 +1,9 @@
 ---
 # <ansible_base_dir>/group_vars/home.yml
 
+awscli_staging_dir: "~/.staging/awscli/home"
+ssh_staging_dir: "~/.staging/ssh/home"
+
 homebrew_taps:
   - homebrew/cask-drivers
   - wagoodman/dive
@@ -58,9 +61,10 @@ python_packages:
   - pylint
   - mock
   - rope
+  - cfn_flip
 
 nodejs_packages:
-  - aws-cdk
+#  - aws-cdk
 
 ruby_packages:
   - bundler
