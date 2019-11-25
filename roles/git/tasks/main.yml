@@ -24,11 +24,11 @@
     scope: global
     value: Andrew Bell
 
-- name: Set github email in global git configuration
+- name: Configure an alias to the github email in global git configuration
   git_config:
-    name: user.email
+    name: alias.home
     scope: global
-    value: "{{ github_email }}"
+    value: config user.email "{{ github_email }}"
 
 - name: Set page in global git configuration
   git_config:
