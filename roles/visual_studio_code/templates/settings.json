@@ -42,5 +42,6 @@
     "terraform.languageServer": {
         "enabled": true,
         "args": []
-    }
+    },
+    "ansible.validation": false
 }
