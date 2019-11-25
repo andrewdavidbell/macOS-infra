@@ -9,10 +9,47 @@
     name: antigen
     state: present
 
-- name: Install {{ ansible_user_dir }}/.zshrc
-  copy:
-    src: zshrc
-    dest: "{{ ansible_user_dir }}/.zshrc"
+- name: Base {{ ansible_user_dir }}/.zshrc
+  blockinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    block: |
+      HOMEBREW_PREFIX=$(brew --prefix)
+
+      source ${HOMEBREW_PREFIX}/share/antigen/antigen.zsh
+
+      # Load the oh-my-zsh's library.
+      antigen use oh-my-zsh
+
+      # Bundles from the default repo (robbyrussell's oh-my-zsh).
+      antigen bundles <<EOBUNDLES
+        osx
+        git
+        nvm
+        npm
+        python
+
+        # Syntax highlighting bundle.
+        zsh-users/zsh-syntax-highlighting
+
+        # Fish-like auto suggestions
+        zsh-users/zsh-autosuggestions
+
+        # Extra zsh completions
+        zsh-users/zsh-completions
+      EOBUNDLES
+
+      # Load the theme.
+      antigen theme agnoster
+
+      # Tell Antigen that you're done.
+      antigen apply
+
+      # Modify prompt
+      DEFAULT_USER=$(whoami)
+
+      alias dev='cd ~/Development'
+    marker: '# {mark} ANSIBLE MANAGED BLOCK: base'
     owner: "{{ ansible_user_id }}"
     group: staff
     mode: 0644
+    create: yes
