@@ -1,4 +1,0 @@
----
-# <ansible_base_dir>/roles/ruby/defaults/main.yml
-
-ruby_state: latest

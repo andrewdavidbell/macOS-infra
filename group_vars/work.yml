@@ -43,7 +43,6 @@ homebrew_formulae:
   - nvm
   - packer
   - python
-  - ruby@2.5
   - saml2aws
   - terraform
   - vault
@@ -59,7 +58,7 @@ python_packages:
   - cfn_flip
 
 nodejs_packages:
-#  - aws-cdk
+  - aws-cdk
 
 ruby_packages:
   - bundler
