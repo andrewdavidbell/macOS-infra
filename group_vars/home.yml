@@ -22,6 +22,7 @@ homebrew_casks:
   - iterm2
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
+  - kindle
   - minikube
   - nordvpn
   - postman
