@@ -6,18 +6,6 @@
     name: git
     state: present
 
-# - name: We're not using a Github API token for Homebrew (bash)
-#   lineinfile:
-#     path: "{{ ansible_user_dir }}/.bashrc"
-#     regexp: '^export HOMEBREW_NO_GITHUB_API'
-#     line: 'export HOMEBREW_NO_GITHUB_API=1'
-
-# - name: We're not using a Github API token for Homebrew (zsh)
-#   lineinfile:
-#     path: "{{ ansible_user_dir }}/.zshrc"
-#     regexp: '^export HOMEBREW_NO_GITHUB_API'
-#     line: 'export HOMEBREW_NO_GITHUB_API=1'
-
 - name: Set name in global git configuration
   git_config:
     name: user.name
@@ -51,3 +39,10 @@
     owner: "{{ ansible_user_id }}"
     group: staff
     mode: 0644
+
+- name: Install git aliases for "{{ ansible_user_dir }}/.zshrc"
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^  git'
+    insertafter: '# ANSIBLE MANAGED: Antigen'
+    line: '  git'

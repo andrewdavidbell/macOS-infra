@@ -14,20 +14,19 @@
     group: staff
     mode: 0755
 
-- name: Ensure nvm.sh is sourced from {{ ansible_user_dir }}/.bashrc
-  blockinfile:
-    dest: "{{ ansible_user_dir }}/.bashrc"
-    block: |
-      export NVM_DIR="$HOME/.nvm"
-      [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-      [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-    marker: '# {mark} ANSIBLE MANAGED BLOCK: nvm'
-
+# Antigen nvm plugin expects nvm.sh in NVM_DIR so install via scripts
 - name: Ensure nvm.sh is sourced from {{ ansible_user_dir }}/.zshrc
   blockinfile:
     dest: "{{ ansible_user_dir }}/.zshrc"
     block: |
       export NVM_DIR="$HOME/.nvm"
-      [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-      [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+      [[ -s "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh" ]] && . "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh"
+      [[ -s "${HOMEBREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm" ]] && . "${HOMEBREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm"
     marker: '# {mark} ANSIBLE MANAGED BLOCK: nvm'
+
+- name: Install npm aliases for zsh
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^  npm'
+    insertafter: '# ANSIBLE MANAGED: Antigen'
+    line: '  npm'

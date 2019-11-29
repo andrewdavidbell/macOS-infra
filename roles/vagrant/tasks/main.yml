@@ -14,3 +14,10 @@
     group: wheel
     mode: 0440
   become: true
+
+- name: Install vagrant aliases for zsh
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^  vagrant'
+    insertafter: '# ANSIBLE MANAGED: Antigen'
+    line: '  vagrant'
