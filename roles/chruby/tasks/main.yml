@@ -1,0 +1,14 @@
+---
+# <ansible_base_dir>/roles/chruby/tasks/main.yml
+
+- name: Install chruby
+  homebrew:
+    name: chruby
+    state: present
+
+- name: Ensure chruby.sh & auto.sh are sourced from {{ ansible_user_dir }}/.zshrc
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^  chruby'
+    insertafter: '# ANSIBLE MANAGED: Antigen'
+    line: '  chruby'

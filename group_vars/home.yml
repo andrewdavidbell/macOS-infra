@@ -37,6 +37,7 @@ homebrew_casks:
 
 homebrew_formulae:
   - awscli
+  - chruby
   - dive
   - docker-machine-driver-hyperkit
   - git
@@ -45,6 +46,7 @@ homebrew_formulae:
   - nvm
   - packer
   - python
+  - ruby-install
   - terraform
   - vault
 
