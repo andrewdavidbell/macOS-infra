@@ -31,3 +31,11 @@
     owner: "{{ ansible_user_id }}"
     group: staff
     mode: 0600
+
+- name: Install aws aliases for zsh
+  lineinfile:
+    path: "{{ ansible_user_dir }}/.zshrc"
+    regexp: '^ aws'
+    insertafter: '# ANSIBLE MANAGED: Antigen'
+    line: '  aws'
+
