@@ -62,6 +62,7 @@ python_packages:
   - cfn_flip
 
 nodejs_packages:
+  - nodemon
   - aws-cdk
 
 ruby_packages:
