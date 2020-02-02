@@ -2,15 +2,4 @@
 # <ansible_base_dir>/roles/visual_studio_code/vars/main.yml
 
 visual_studio_code_extensions:
-    - { name: 'amazonwebservices.aws-toolkit-vscode',        version: '1.0.0' }
-    - { name: 'auiworks.amvim',                              version: '1.30.0'}
-    - { name: 'aws-scripting-guy.cform',                     version: '0.0.23' }
-    - { name: 'dbaeumer.vscode-eslint',                      version: '1.9.1' }
-    - { name: 'eamodio.gitlens',                             version: '9.9.3' }
-    - { name: 'mauve.terraform',                             version: '1.4.0' }
-    - { name: 'ms-azuretools.vscode-docker',                 version: '0.7.0' }
-    - { name: 'ms-kubernetes-tools.vscode-kubernetes-tools', version: '1.0.3' }
-    - { name: 'ms-python.python',                            version: '2019.8.30787' }
-    - { name: 'ms-vscode.vscode-typescript-tslint-plugin',   version: '1.2.2' }
-    - { name: 'redhat.vscode-yaml',                          version: '0.5.2' }
-    - { name: 'vscoss.vscode-ansible',                       version: '0.5.2'}
+  - { name: 'Shan.code-settings-sync', version: '3.4.3' }
