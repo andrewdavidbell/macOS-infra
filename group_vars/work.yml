@@ -8,6 +8,9 @@ homebrew_taps:
   - homebrew/cask-drivers
   - versent/taps
   - wagoodman/dive
+  - blendle/blendle
+  - johanhaleby/kubetail
+  - int128/kubelogin
 
 homebrew_casks:
   # - 1password # post: install license key
@@ -42,12 +45,19 @@ homebrew_formulae:
   - git
   - gitlab-runner
   - jq
-  - kubectl
+  - kind
+  - kns
+  - kubectx
+  - kubelogin
+  - kubernetes-cli
+  - kubetail
+  - kustomize
   - nvm
   - packer
   - python
   - ruby-install
   - saml2aws
+  - stern
   - terraform
   - vault
 
