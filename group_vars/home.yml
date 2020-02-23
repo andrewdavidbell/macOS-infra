@@ -23,7 +23,6 @@ homebrew_casks:
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
   - kindle
-  - minikube
   - nordvpn
   - postman
   - qlmarkdown
@@ -39,10 +38,10 @@ homebrew_formulae:
   - awscli
   - chruby
   - dive
-  - docker-machine-driver-hyperkit
   - git
   - jq
   - kubectl
+  - minikube
   - nvm
   - packer
   - python

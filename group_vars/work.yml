@@ -16,6 +16,7 @@ homebrew_casks:
   # - 1password # post: install license key
   - aerial
   - docker
+  - firefox
   - flux
   - github
   - google-chrome
@@ -25,7 +26,6 @@ homebrew_casks:
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
   - kindle
-  - minikube
   - postman
   - qlmarkdown
   - slack
@@ -41,7 +41,6 @@ homebrew_formulae:
   - azure-cli
   - chruby
   - dive
-  - docker-machine-driver-hyperkit
   - git
   - gitlab-runner
   - jq
@@ -52,6 +51,7 @@ homebrew_formulae:
   - kubernetes-cli
   - kubetail
   - kustomize
+  - minikube
   - nvm
   - packer
   - python
