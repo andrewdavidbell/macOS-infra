@@ -20,8 +20,7 @@
     dest: "{{ ansible_user_dir }}/.zshrc"
     block: |
       export NVM_DIR="$HOME/.nvm"
-      [[ -s "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh" ]] && . "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh"
-      [[ -s "${HOMEBREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm" ]] && . "${HOMEBREW_PREFIX}/opt/nvm/etc/bash_completion.d/nvm"
+      [[ -e "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh" ]] && source "${HOMEBREW_PREFIX}/opt/nvm/nvm.sh"
     marker: '# {mark} ANSIBLE MANAGED BLOCK: nvm'
 
 - name: Install npm aliases for zsh

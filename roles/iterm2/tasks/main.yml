@@ -18,5 +18,5 @@
 - name: Load iTerm2 zsh integration script
   lineinfile:
     path: "{{ ansible_user_dir }}/.zshrc"
-    regexp: '^\[ -e "~/.iterm2_shell_integration.zsh" \]'
-    line: '[ -e "~/.iterm2_shell_integration.zsh" ] && . "~/.iterm2_shell_integration.zsh"'
+    regexp: '^\[\[ -e "${HOME}/.iterm2_shell_integration.zsh" \]\]'
+    line: '[[ -e "${HOME}/.iterm2_shell_integration.zsh" ]] && source "${HOME}/.iterm2_shell_integration.zsh"'

@@ -20,14 +20,6 @@
         group: staff
         mode: 0755
 
-    - name: Create development directory
-      file:
-        path: "{{ ansible_user_dir }}/Development"
-        state: directory
-        owner: "{{ ansible_user_id }}"
-        group: staff
-        mode: 0755
-
   roles:
     - role: zsh
       tags: zsh
@@ -42,6 +34,20 @@
       tags: ssh
 
   tasks:
+    - name: Create development directory
+      file:
+        path: "{{ ansible_user_dir }}/Development"
+        state: directory
+        owner: "{{ ansible_user_id }}"
+        group: staff
+        mode: 0755
+
+    - name: Alias to development directory
+      lineinfile:
+        path: "{{ ansible_user_dir }}/.zshrc"
+        regexp: '^alias dev='
+        line: 'alias dev="cd ~/Development"'
+
     - name: Apply Vim configuration
       blockinfile:
         dest: "{{ ansible_user_dir }}/.vimrc"
@@ -63,4 +69,11 @@
           set mouse=a
         marker: '" {mark} ANSIBLE MANGED BLOCK'
         create: yes
+
+    - name: Install K8s aliases for zsh
+      lineinfile:
+        path: "{{ ansible_user_dir }}/.zshrc"
+        regexp: '^ kubectl'
+        insertafter: '# ANSIBLE MANAGED: Antigen'
+        line: '  kubectl'
 

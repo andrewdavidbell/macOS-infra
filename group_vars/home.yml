@@ -3,6 +3,7 @@
 
 awscli_staging_dir: "~/.staging/awscli/home"
 ssh_staging_dir: "~/.staging/ssh/home"
+zsh_staging_dir: "~/.staging/zsh/home"
 
 homebrew_taps:
   - homebrew/cask-drivers
