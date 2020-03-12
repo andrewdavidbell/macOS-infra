@@ -10,7 +10,8 @@ homebrew_taps:
   - wagoodman/dive
 
 homebrew_casks:
-  # - 1password # post: install license key
+  - 1password
+  - anki
   - arduino
   - docker
   - dropbox
