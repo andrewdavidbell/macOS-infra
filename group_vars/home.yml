@@ -8,11 +8,14 @@ zsh_staging_dir: "~/.staging/zsh/home"
 homebrew_taps:
   - homebrew/cask-drivers
   - wagoodman/dive
+  - adoptopenjdk/openjdk
 
 homebrew_casks:
   - 1password
+  - adoptopenjdk11-openj9
   - anki
   - arduino
+  - brave-browser
   - docker
   - dropbox
   - evernote
@@ -29,6 +32,7 @@ homebrew_casks:
   - postman
   - qlmarkdown
   - send-to-kindle
+  - synergy
   - synology-drive
   # - the-hit-list # requires Ansible Vault
   - vagrant
@@ -41,9 +45,12 @@ homebrew_formulae:
   - chruby
   - dive
   - git
+  - hugo
+  - istioctl
   - jq
-  - kubectl
-  - minikube
+  - kind
+  - kubectx
+  - kubernetes-cli
   - nvm
   - packer
   - python
