@@ -26,7 +26,6 @@ homebrew_casks:
   - iterm2
   # - little-snitch # post: install license key
   # - micro-snitch # post: install license key
-  - kindle
   - postman
   - qlmarkdown
   - slack
@@ -52,7 +51,6 @@ homebrew_formulae:
   - kubernetes-cli
   - kubetail
   - kustomize
-  - minikube
   - nvm
   - packer
   - python
