@@ -24,6 +24,37 @@
     scope: global
     value: less -r
 
+# https://spin.atomicobject.com/2020/05/05/git-configurations-default/
+- name: Configure Pull with Rebase
+  git_config:
+    name: pull.rebase
+    scope: global
+    value: "true"
+
+- name: Configure Prune on Fetch
+  git_config:
+    name: fetch.prune
+    scope: global
+    value: "true"
+
+- name: Differentiate Moved Lines
+  git_config:
+    name: diff.colorMoved
+    scope: global
+    value: zebra
+
+- name: Configure autoStash
+  git_config:
+    name: rebase.autoStash
+    scope: global
+    value: "true"
+
+- name: Configure autoSquash
+  git_config:
+    name: rebase.autoSquash
+    scope: global
+    value: "true"
+
 - name: Ensure .config/git directory exists
   file:
     path: "{{ ansible_user_dir }}/.config/git"
