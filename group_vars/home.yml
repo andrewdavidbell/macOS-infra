@@ -44,6 +44,7 @@ homebrew_formulae:
   - chruby
   - dive
   - git
+  - go
   - hugo
   - istioctl
   - jq
