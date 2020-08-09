@@ -43,6 +43,7 @@ homebrew_formulae:
   - dive
   - git
   - gitlab-runner
+  - go
   - jq
   - kind
   - kns
